@@ -3,12 +3,12 @@
 ## Outline
 
 * Developing, testing and deploying web services
-** Rack and Sinatra
-** Rack::Test
-** Heroku
+  * Rack and Sinatra
+  * Rack::Test
+  * Heroku
 * Exercise
 * Exploration
-** Travis Continuous Integration
+  * Travis Continuous Integration
 
 ## Developing, Testing and Deploying web services
 
@@ -82,6 +82,12 @@ applications trivial (and free).
 
 [Detailed Example](https://github.com/sinatra/heroku-sinatra-app)
 
-## Excercise
+## Exercise
+
+1. Use this repository to make your own, called **yourname**-week-06-sinatra
+1. (optional) Add a feature and a spec for the new feature
+1. Deploy the app to Heroku
 
 ## Exploration
+
+
