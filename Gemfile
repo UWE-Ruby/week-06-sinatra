@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'twitter'
 gem 'heroku'
 gem 'haml'
+gem 'rake'
 
 group :test do
   gem 'guard'
