@@ -113,5 +113,9 @@ Rakefile with the default task being a test task.
 As well, Travis makes it easy to test your project against multiple versions and flavors of Ruby.
 Take a look at the file named `.travis.yml` in this project and notice the flavors of ruby that will be used to run tests.
 
+Once you have that set up, you can include your live build status in your Readme file, like so:
+[![build status](http://travis-ci.org/bfaloona/week-06-sinatra.png)](http://travis-ci.org/bfaloona/week-06-sinatra)
+
+
 
 
