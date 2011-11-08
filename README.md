@@ -67,7 +67,7 @@ Our spec file simply includes our code and rack/test, and then provides some req
       ...
     end
 
-In our example we use rack-test to simulate, or mock, a GET request against the server.
+In the spec file's examples we use rack-test to simulate, or mock, a GET request against the server.
 **Note:** the `get` method used here is from rack-test, not sinatra!
 
       get "/"
