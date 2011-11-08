@@ -8,7 +8,7 @@ class TwitterInfo < Sinatra::Application
 
   get '/' do
     '<html><body>Append a twitter username on the url to display
-      how many followers the user has.<br/> For example:<br/><a href=\'/burtlo\'>http://localhost:9292/user/<strong>burtlo</strong></a>
+      how many followers the user has.<br/> For example:<br/><a href=\'/user/burtlo\'>/user/<strong>burtlo</strong></a>
       </body></html>'
   end
 
