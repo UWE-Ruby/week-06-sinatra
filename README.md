@@ -16,7 +16,7 @@
 
 [Rack](http://rack.rubyforge.org/) is an minimal interface for developing web applications.
 Rails, Sinatra, and many other web frameworks are written on top of Rack.
-If you want the simplest possible web application you can use the `rack` gem
+If you want the simplest possible web application you can use the rack gem
 and a file named config.ru that contains the following code:
 
     app = lambda do |env|
@@ -43,44 +43,54 @@ Rack uses mock objects to allow inspection of http requests and responses withou
 web application or making any client requests. Don't worry about understanding mocks right now, except to understand
 it is one more trick in the ruby toolbox that makes developing and testing easier.
 
+Sinatra uses rack, so this is a rack application.
+
     # lib/my_app.rb
     require 'sinatra'
     get '/' do
       'Hello World!'
     end
 
+Our spec file simply includes our code and rack/test, and then provides some required set-up.
+
     # spec/my_app_spec.rb
     require 'my_app'
     require 'rack/test'
+
     describe "my app" do
       include Rack::Test::Methods
+
       def app
         Sinatra::Application
       end
 
-      it "should say hello" do
-        # first we use rack-test to 'pretend' to make a GET request against the root of the server
-        get "/"
-
-        # rack-test creates a last_request and last_response object that we can interrogate
-        last_request.env['REQUEST_METHOD'].should == 'GET'
-        last_response.body.should match(/Hello World/)
-        last_response.status.should == 200
-      end
+      ...
     end
+
+In our example we use rack-test to simulate, or mock, a GET request against the server.
+**Note:** the `get` method used here is from rack-test, not sinatra!
+
+      get "/"
+
+The rack-test code then creates `last_request` and `last_response` objects that we can interrogate.
+
+    last_request.env['REQUEST_METHOD'].should == 'GET'
+    last_response.body.should match(/Hello World/)
+    last_response.status.should == 200
 
 ### Heroku
 
 [Heroku](http://www.heroku.com/) is a cloud application platform that makes deploying web
 applications trivial (and free).
 
-1. Create an account if you don’t have one
-1. gem install heroku
-1. Make a config.ru in the root-directory
-1. Create the app on heroku
-1. Push to it
+1. [Create a Heroku account](https://api.heroku.com/signup)
+1. Install the heroku gem with `gem install heroku`
+1. Make a config.ru in the root-directory that runs your app
+1. Create the app on heroku with `heroku create <your-appname>`
+1. Push to it heroku with `git push heroku master`
+1. Open the app in a browser at http://**your-heroku-app-name**.heroku.com or type `heroku open`
 
-[Detailed Example](https://github.com/sinatra/heroku-sinatra-app)
+[Example](https://github.com/sinatra/heroku-sinatra-app)
 
 ## Exercise
 
@@ -89,5 +99,19 @@ applications trivial (and free).
 1. Deploy the app to Heroku
 
 ## Exploration
+
+### [Travis CI](http://about.travis-ci.org/docs/user/getting-started/)
+A distributed build system for the open source community.
+
+This service automatically runs your tests everytime you push your code to github.
+While you should always run your tests manually before you commit, this continuous integration service
+can be very useful when you have long running tests and/or many contributors.
+
+In order to build your Ruby project on Travis CI, your repository should have a
+Rakefile with the default task being a test task.
+
+As well, Travis makes it easy to test your project against multiple versions and flavors of Ruby.
+Take a look at the file named `.travis.yml` in this project and notice the flavors of ruby that will be used to run tests.
+
 
 
