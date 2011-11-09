@@ -95,6 +95,7 @@ applications trivial (and free).
 ## Exercise
 
 Review the sinatra [documentation](http://www.sinatrarb.com/intro.html).
+
 1. Use this repository to make your own, called **yourname**-week-06-sinatra .
 1. Complete the two pending specs. One of them describes a feature that you will need to write.
 1. (optional) Add yet another feature and a spec for it.
