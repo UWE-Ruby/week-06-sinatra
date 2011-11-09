@@ -94,9 +94,11 @@ applications trivial (and free).
 
 ## Exercise
 
-1. Use this repository to make your own, called **yourname**-week-06-sinatra
-1. (optional) Add a feature and a spec for the new feature
-1. Deploy the app to Heroku
+Review the sinatra [documentation](http://www.sinatrarb.com/intro.html).
+1. Use this repository to make your own, called **yourname**-week-06-sinatra .
+1. Complete the two pending specs. One of them describes a feature that you will need to write.
+1. (optional) Add yet another feature and a spec for it.
+1. Deploy the app to Heroku.
 
 ## Exploration
 

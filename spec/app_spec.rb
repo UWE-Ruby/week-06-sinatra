@@ -11,7 +11,7 @@ describe "Twitter Info" do
     TwitterInfo
   end
 
-  it "should provide instructions" do
+  it "should provide helpful instructions" do
 
     get "/"
 
@@ -29,6 +29,26 @@ describe "Twitter Info" do
 
   end
 
-  it "should retrieve the user's follower count for any valid username"
+
+  ##
+  # this spec needs to be written.
+  #
+  it "should display the user's follower count for any valid username"
+
+
+
+  ##
+  # this spec is a placeholder a feature that needs to be written.
+  # please write the spec and the feature.
+  # gold star for writing the spec before the lib code. :)
+  #
+  # hints:
+  # use a begin/rescue/end block to rescue the error raised by
+  # the Twitter gem when a username cannot be found.
+  #
+  # when that happens, return a new template file named 404.haml
+  #
+  it "should return a custom 404 page when the username cannot be found"
+
 
 end
